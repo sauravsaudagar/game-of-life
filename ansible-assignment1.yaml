@@ -20,3 +20,6 @@
 
     - name: copy_war
       action: copy src=/mnt/projects/game-of-life/gameoflife-web/target/gameoflife.war dest=/mnt/wars
+      
+    - name: copy_Dockerfile
+      action: copy src=src=/mnt/projects/game-of-life/Dockerfile dest=/mnt
