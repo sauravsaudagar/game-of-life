@@ -1,0 +1,22 @@
+--- #install java-1.8.0-openjdk-devel.x86_64 , git , docker
+- hosts: all
+  user: saurav
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+    - name: install_java
+      action: yum name=java-1.8.0-openjdk-devel.x86_64 state=present
+
+    - name: install_git
+      action: yum name=git state=present
+
+    - name: install_docker
+      action: yum name=docker state=present
+
+    - name: docker_start
+      action: service name=docker state=started
+
+    - name: copy_war
+      action: copy src=/mnt/projects/game-of-life/gameoflife-web/target/gameoflife.war dest=/mnt/wars
