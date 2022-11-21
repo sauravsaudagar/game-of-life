@@ -19,7 +19,7 @@
       action: service name=docker state=started
 
     - name: copy_war
-      action: copy src=/mnt/projects/game-of-life/gameoflife-web/target/gameoflife.war dest=/mnt/wars/
+      action: copy src=/mnt/projects/game-of-life/gameoflife-web/target/gameoflife.war dest=/mnt
       
     - name: copy_Dockerfile
       action: copy src=/mnt/projects/game-of-life/Dockerfile dest=/mnt
